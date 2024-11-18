@@ -1,0 +1,23 @@
+.customcanvas {
+  position: fixed;
+  inset: 0 0 0 auto;
+  max-width: 100%;
+  background-color: gray;
+  width: 400px;
+  z-index: 2000;
+  visibility: hidden;
+
+  .offcanvasbody {
+    background-color: red;
+    &.show {
+      display: inline-block;
+    }
+  }
+  .canvas-body {
+    padding: 20px;
+  }
+
+  &.show {
+    visibility: visible;
+  }
+}

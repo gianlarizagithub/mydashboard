@@ -1,0 +1,217 @@
+<div class="app-menu sidenav">
+  <div class="container-nav">
+    <div class="mybrand-box">
+      <div class="brand-logos">
+        <a routerLink="/" class="logo logo-dark">
+          <span class="logo-sm">
+            <img src="assets/images/logo/logo-sm.png" alt="" height="22" />
+          </span>
+          <span class="logo-lg">
+            <img src="assets/images/logo/logo-dark.png" alt="" height="22" />
+          </span>
+        </a>
+        <!-- <a routerLink="/" class="logo logo-light">
+                      <span class="logo-sm">
+                        <img src="assets/images/logo/logo-sm.png" alt="" height="22" />
+                      </span>
+                      <span class="logo-lg">
+                        <img src="assets/images/logo/logo-light.png" alt="" height="22" />
+                      </span>
+                    </a> -->
+      </div>
+      <!-- <div class="secmennu-button">
+            <button class="btn btn-sm btn-primary smallmenubtn" (click)="tog()">
+              2
+            </button>
+          </div>
+          <div class="mennu-button">
+            <button
+              class="btn btn-sm btn-secondary"
+              (click)="toggleMobileMenu($event)"
+            >
+              1
+            </button>
+          </div> -->
+    </div>
+  </div>
+
+  <div id="scrollbar">
+    <div class="container-fluid">
+      <ul class="navbar-nav" id="navbar-nav">
+        @for (item of menuItems; track $index) { @if (item.isTitle) {
+        <li class="menu-title">
+          <span>{{ item.label }}</span>
+        </li>
+        } @else {
+        <li class="nav-item">
+          @if (hasItems(item)) {
+          <a
+            href="javascript:void(0)"
+            class="is-parent nav-link menu-link"
+            data-bs-toggle="collapse"
+            aria-expanded="false"
+            (click)="toggleItem($event)"
+            [ngClass]="{ 'has-arrow': !item.badge, 'has-dropdown': item.badge }"
+          >
+            <i class="{{ item.icon }} icon nav-icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+
+          <div class="collapse menu-dropdown">
+            <ul class="nav nav-sm flex-column" aria-expanded="false">
+              @for (subitem of item.subItems; track $index) {
+              <li class="nav-tem">
+                @if (hasItems(subitem)) {
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link"
+                  [attr.data-parent]="subitem.parentId"
+                  data-bs-toggle="collapse"
+                  aria-expanded="false"
+                  (click)="toggleSubItem($event)"
+                >
+                  <i class="{{ subitem.icon }} icon nav-icon"></i>
+                  <span>{{ subitem.label }}</span>
+                </a>
+
+                <div class="collapse menu-dropdown">
+                  @if (subitem.subItem.length > 13) {
+                  <div class="row">
+                    @for (sub2item of subitem.subItems; track $index) {
+                    @if($index % 2 == 0){
+                    <div class="col-lg-4">
+                      <ul class="nav nav-sm flex-column" aria-expanded="false">
+                        <li class="nav-item">
+                          <a
+                            [attr.data-parent]="sub2item.parentId"
+                            [routerLink]="sub2item.link"
+                            class="nav-link"
+                            (click)="updateActive($event)"
+                          >
+                            {{ sub2item.label }}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    }@else {
+                    <div class="col-lg-4">
+                      <ul class="nav nav-sm flex-column" aria-expanded="false">
+                        <li class="nav-item">
+                          <a
+                            [attr.data-parent]="sub2item.parentId"
+                            [routerLink]="sub2item.link"
+                            class="nav-link"
+                            (click)="updateActive($event)"
+                          >
+                            {{ sub2item.label }}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    } }
+                  </div>
+                  }@else{
+                  <ul class="nav nav-sm flex-column" aria-expanded="false">
+                    @for (sub2item of subitem.subItem; track $index) {
+                    <li class="nav-item">
+                      @if (sub2item.subItems) {
+
+                      <a
+                        [attr.data-parent]="sub2item.parentId"
+                        [routerLink]="sub2item.link"
+                        class="nav-link"
+                        (click)="updateActive($event)"
+                      >
+                        {{ sub2item.label }}
+                      </a>
+
+                      <div class="collapse menu-dropdown">
+                        <ul
+                          class="nav nav-sm flex-column"
+                          aria-expanded="false"
+                        >
+                          @for (sub3item of sub2item.subItems; track $index) {
+                          <li class="nav-item">
+                            @if(sub3item.subItems){
+                            <a
+                              [attr.data-parent]="sub3item.parentId"
+                              [routerLink]="sub3item.link"
+                              class="nav-link"
+                              (click)="updateActive($event)"
+                            >
+                              {{ sub3item.label }}
+                            </a>
+                            <div class="collapse menu-dropdown">
+                              <ul
+                                class="nav nav-sm flex-column"
+                                aria-expanded="false"
+                              >
+                                @for (sub4item of sub3item.subItems; track
+                                $index) {
+                                <li class="nav-item">
+                                  <a
+                                    [attr.data-parent]="sub3item.parentId"
+                                    [routerLink]="sub4item.link"
+                                    (click)="updateActive($event)"
+                                  >
+                                    {{ sub4item.label }}
+                                  </a>
+                                </li>
+                                }
+                              </ul>
+                            </div>
+                            }@else {
+                            <a
+                              [attr.data-parent]="sub2item.parentId"
+                              [routerLink]="sub3item.link"
+                              class="nav-link"
+                              (click)="updateActive($event)"
+                            >
+                              {{ sub3item.label }}
+                            </a>
+                            }
+                          </li>
+                          }
+                        </ul>
+                      </div>
+
+                      }@else {
+                      <a
+                        [attr.data-parent]="sub2item.parentId"
+                        [routerLink]="sub2item.link"
+                        class="nav-item"
+                        (click)="updateActive($event)"
+                      >
+                        {{ sub2item.label }}
+                      </a>
+                      }
+                    </li>
+                    }
+                  </ul>
+                  }
+                </div>
+                }@else {
+                <a
+                  [routerLink]="subitem.link"
+                  class="nav-link"
+                  [attr.data-parent]="subitem.parentId"
+                  (click)="updateActive($event)"
+                >
+                  {{ subitem.label }}
+                </a>
+                }
+              </li>
+              }
+            </ul>
+          </div>
+          }@else{
+          <a [routerLink]="item.link" class="nav-link menu-link">
+            <span>{{ item.label }}</span>
+          </a>
+          }
+        </li>
+        } }
+      </ul>
+    </div>
+  </div>
+</div>

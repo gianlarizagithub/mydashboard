@@ -1,0 +1,14 @@
+<div class="full-layout">
+  <app-header></app-header>
+  <app-sidebar (mobileMenuButtonClicked)="onToggleMobileMenu()"></app-sidebar>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+<app-settings></app-settings>

@@ -1,0 +1,213 @@
+$header-height: 80px;
+
+$v-width-sm: 70px;
+$v-width-lg: 250px;
+
+$v-menu-item-padding-x: 1rem;
+$v-menu-item-padding-y: 0.625rem;
+
+/// horizontal
+$h-menu-item-padding-x: 1.2rem;
+$h-menu-item-padding-y: 0.75rem;
+
+$grid-gutter-width: var(--#{$prefix}grid-gutter-width);
+
+// $white: #fff;
+// $gray-100: #f1f1f3;
+// $gray-200: #e3e3e8;
+// $gray-300: #d4d5dc;
+// $gray-400: #c6c7d1;
+// $gray-500: #b8b9c5;
+// $gray-600: #93949e;
+// $gray-700: #6e6f76;
+// $gray-800: #4a4a4f;
+// $gray-900: #252527;
+// $black: #000;
+
+$white: #fff;
+$gray-100: #f1f2f4;
+$gray-200: #c5ccd2;
+$gray-300: #a8b3bb;
+$gray-400: #8b99a5;
+$gray-500: #6e808e;
+$gray-600: #586672;
+$gray-700: #424d55;
+$gray-800: #2c3339;
+$gray-900: #161a1c;
+$black: #000;
+
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+
+$blue: #5e67db;
+$indigo: #ba67d6;
+$purple: #a26df8;
+$pink: #f15f7d;
+$red: #e3648e;
+$orange: #fbba4f;
+$yellow: #f0a748;
+$green: #2dc4a1;
+$teal: #1bf2c0;
+$cyan: #46a9eb;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+
+// scss-docs-start theme-color-variables
+$primary: $blue;
+$secondary: $indigo;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-200;
+$dark: $gray-900;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+// scss-docs-start theme-bg-subtle-variables
+$primary-bg-subtle: tint-color($primary, 90%);
+$secondary-bg-subtle: tint-color($secondary, 90%);
+$success-bg-subtle: tint-color($success, 90%);
+$info-bg-subtle: tint-color($info, 90%);
+$warning-bg-subtle: tint-color($warning, 90%);
+$danger-bg-subtle: tint-color($danger, 90%);
+$light-bg-subtle: mix($gray-100, $white);
+$dark-bg-subtle: $gray-300;
+// scss-docs-end theme-bg-subtle-variables
+
+// scss-docs-start theme-border-subtle-variables
+$primary-border-subtle: tint-color($primary, 60%);
+$secondary-border-subtle: tint-color($secondary, 60%);
+$success-border-subtle: tint-color($success, 60%);
+$info-border-subtle: tint-color($info, 60%);
+$warning-border-subtle: tint-color($warning, 60%);
+$danger-border-subtle: tint-color($danger, 60%);
+$light-border-subtle: $gray-300;
+$dark-border-subtle: $gray-500;
+// scss-docs-end theme-border-subtle-variables
+
+$min-contrast-ratio: 1.75;
+
+$body-bg: $primary-border-subtle;
+$body-color: $gray-900;
+
+$body-secondary-color: $gray-600;
+$body-secondary-bg: $white;
+$body-emphasis-color: $gray-900;
+
+$border-radius: 0.1875rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.3125rem;
+$border-radius-xl: 1rem;
+$border-radius-pill: 60rem;
+
+/// Typography
+$font-family-sans-serif: var(--#{$prefix}font-sans-serif);
+
+$line-height-base: 1.3;
+
+$font-size-base: 1rem; // or 16px
+$font-size-sm: calc(#{$font-size-base} * 0.875);
+$font-size-lg: calc(#{$font-size-base} * 1.25);
+
+/// input and button padding sharing
+$input-btn-padding-x-sm: 0.5625rem; // 9px
+$input-btn-padding-y-sm: 0.3125rem; // 5px
+$input-btn-font-size-sm: 0.875rem; // 14px
+
+$input-btn-padding-x: $font-size-base; // 16px
+$input-btn-padding-y: 0.5625rem; // 9px
+$input-btn-font-size: $font-size-base; // 16px
+
+$input-btn-padding-x-lg: 1.3125rem; // 21px
+$input-btn-padding-y-lg: 0.75rem; // 12px
+$input-btn-font-size-lg: 1.125rem; // 18px
+
+$input-btn-lineheight: $line-height-base;
+
+// btn
+
+$btn-lineheight: $input-btn-lineheight;
+
+// $btn-color:                   var(--#{$prefix}body-color);
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+$btn-font-family: $input-btn-font-family;
+$btn-font-size: $input-btn-font-size;
+$btn-line-height: $input-btn-line-height;
+$btn-white-space: null; // Set to `nowrap` to prevent text wrapping
+
+// $btn-padding-y-sm: $input-btn-padding-y-sm;
+// $btn-padding-x-sm: $input-btn-padding-x-sm;
+// $btn-font-size-sm: $input-btn-font-size-sm;
+
+// $btn-padding-y-lg: $input-btn-padding-y-lg;
+// $btn-padding-x-lg: $input-btn-padding-x-lg;
+// $btn-font-size-lg: $input-btn-font-size-lg;
+
+$btn-border-width: $input-btn-border-width;
+
+$btn-font-weight: $font-weight-normal;
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075);
+$btn-focus-width: $input-btn-focus-width;
+$btn-focus-box-shadow: $input-btn-focus-box-shadow;
+$btn-disabled-opacity: 0.65;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125);
+
+$btn-link-color: var(--#{$prefix}link-color);
+$btn-link-hover-color: var(--#{$prefix}link-hover-color);
+$btn-link-disabled-color: $gray-600;
+$btn-link-focus-shadow-rgb: to-rgb(
+  mix(color-contrast($link-color), $link-color, 15%)
+);
+
+// Allows for customizing button radius independently from global border radius
+
+$btn-border-radius: $border-radius;
+$btn-border-radius-sm: $border-radius-sm;
+$btn-border-radius-lg: $border-radius-lg;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+$btn-hover-bg-shade-amount: 15%;
+$btn-hover-bg-tint-amount: 15%;
+$btn-hover-border-shade-amount: 20%;
+$btn-hover-border-tint-amount: 10%;
+$btn-active-bg-shade-amount: 20%;
+$btn-active-bg-tint-amount: 20%;
+$btn-active-border-shade-amount: 25%;
+$btn-active-border-tint-amount: 10%;

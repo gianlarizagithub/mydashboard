@@ -1,0 +1,29 @@
+<div class="setting-button">
+  <div class="btn btn-primary" (click)="opensettings()">Settings</div>
+</div>
+
+<div class="customcanvas">
+  <div class="canvas-body">
+    <div class="offcanvasbody" (click)="closecanvas()">close</div>
+
+    <div class="sidebar-settings">
+      <h5>Sidebar Settings</h5>
+      <button class="btn btn-primary" (click)="changeSidebar('detached')">
+        detached
+      </button>
+      <button class="btn btn-secondary" (click)="changeSidebar('default')">
+        default
+      </button>
+    </div>
+
+    <div class="layout-settings">
+      <h5>Layout Settings</h5>
+      <button class="btn btn-secondary" (click)="changeLayout('vertical')">
+        vertical layout
+      </button>
+      <button class="btn btn-info" (click)="changeLayout('horizontal')">
+        horizontal
+      </button>
+    </div>
+  </div>
+</div>

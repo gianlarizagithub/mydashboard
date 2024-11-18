@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+[data-theme="default"] {
+  --#{$prefix}font-sans-serif: "Archivo", sans-serif;
+
+  --#{$prefix}grid-gutter-width: 1.25rem;
+
+  //   &[topbar-mode="light"] {
+
+  //   }
+}

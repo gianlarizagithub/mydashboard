@@ -1,0 +1,37 @@
+.footer {
+  // bottom: 0;
+  padding: 20px calc(#{$grid-gutter-width} * 0.5);
+  position: absolute;
+  right: 0;
+  // color: $footer-color;
+  left: $v-width-lg;
+  height: $header-height;
+  background-color: indianred;
+  // @include animation-medium;
+  @media (max-width: 991.98px) {
+    left: 0;
+  }
+}
+
+[data-layout="vertical"] {
+  &[data-sidebar-size="sm"] {
+    .footer {
+      left: $v-width-sm;
+      @media (max-width: 767.98px) {
+        left: 0;
+      }
+    }
+  }
+}
+
+[data-layout="vertical"][data-layout-style="detached"] {
+  .footer {
+    background: red;
+    left: 0 !important;
+  }
+}
+[data-layout="horizontal"] {
+  .footer {
+    left: 0 !important;
+  }
+}

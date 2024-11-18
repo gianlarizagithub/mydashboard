@@ -1,0 +1,145 @@
+[data-layout="horizontal"] {
+  .content-container {
+    margin-left: 0;
+  }
+
+  @include desktop-mode {
+    .layout-width,
+    .container-fluid {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  .sidenav {
+    background-color: red;
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: auto;
+
+    @include small-mobile-mode {
+      .container-fluid {
+        padding: 0;
+      }
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+
+      .nav-sm {
+        padding-left: 0;
+
+        .nav-link {
+          padding: 0.55rem 1.8rem;
+          color: green;
+
+          &:before {
+            opacity: 0 !important;
+          }
+
+          &:hover,
+          &.active {
+            color: black;
+          }
+
+          &[data-bs-toggle="collapse"][aria-expanded="true"] {
+            color: aqua;
+            background-color: blue;
+            &:after {
+              color: blueviolet;
+            }
+          }
+        }
+      }
+
+      .nav-link {
+        padding: $h-menu-item-padding-y $h-menu-item-padding-x;
+        margin: 0;
+        i {
+          line-height: 1;
+        }
+
+        &.active {
+          background-color: green;
+          &:after {
+            color: greenyellow;
+          }
+        }
+
+        &[data-bs-toggle="collapse"][aria-expaned="true"] {
+          background: transparent;
+
+          &:after {
+            color: aqua;
+          }
+        }
+      }
+
+      > .nav-item {
+        > .nav-link[data-bs-toggle="collapse"]:after {
+          right: 0px;
+          transform: rotate(90deg) !important;
+        }
+      }
+      > li:nth-of-type(2) {
+        > .nav-link.menu-link {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .mybrand-box {
+      display: none;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      position: relative;
+      flex-shrink: 0;
+
+      .nav-link[data-bs-toggle="collapse"]:after {
+        right: 10px;
+        transform: rotate(0deg) !important;
+      }
+
+      /// > navlink .badge
+      &:hover {
+        > .nav-link {
+          color: darkgray;
+
+          &:after {
+            color: blue;
+          }
+        }
+
+        @include desktop-mode {
+          > .menu-dropdown {
+            display: block;
+            background-color: violet;
+            height: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-dropdown {
+    animation: scale-up-tl 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    margin: 0;
+    position: absolute;
+    display: none;
+
+    .menu-dropdown {
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  .menu-title {
+    display: none;
+  }
+}
